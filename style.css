@@ -79,11 +79,63 @@ body {
     flex-grow: 1;
     padding: 40px;
     box-sizing: border-box;
+    overflow-x: hidden;
 }
 
 /* Sections Styling */
 .content-section {
     width: 90%;    margin-bottom: 60px; /* added spacing between sections */}
+
+/* Image carousel on landing page */
+.image-carousel {
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+    border-radius: 16px;
+    background: #f7f9fb;
+    padding: 18px 12px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+}
+
+.image-track {
+    display: flex;
+    gap: 18px;
+    width: max-content;
+    animation: carousel-scroll 100s linear infinite;
+    will-change: transform;
+}
+
+.image-carousel:hover .image-track {
+    animation-play-state: paused;
+}
+
+.image-track img {
+    height: 180px;
+    width: auto;
+    border-radius: 12px;
+    object-fit: cover;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+    transition: transform 0.2s ease;
+}
+
+.image-track img:hover {
+    transform: scale(1.03);
+}
+
+@keyframes carousel-scroll {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+@media (max-width: 900px) {
+    .image-track img {
+        height: 140px;
+    }
+}
 
 .hidden {
     display: none;
