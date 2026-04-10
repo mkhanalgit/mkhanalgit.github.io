@@ -59,7 +59,7 @@ body {
 }
 
 .nav-link {
-    font-size: 1.2em;
+    font-size: 1em;
     padding:6px 10px;
     margin-top: 10px;
     margin-left:1px;
@@ -70,12 +70,12 @@ body {
     margin-top: 1px;
     margin-left: 10px;
     padding: 6px 10px;
-    font-size: 0.1em;
+    font-size: 0.9em;
 }
 
 /* Main Content Area */
 .content-area {
-    margin-left: 240px; /* Same width as sidebar */
+    margin-left: 290px; /* Aligned with sidebar width (250px + 40px padding) */
     flex-grow: 1;
     padding: 40px;
     box-sizing: border-box;
@@ -83,14 +83,7 @@ body {
 
 /* Sections Styling */
 .content-section {
-    max-width: 900px;
-    margin: auto;
-    background-color: #ffffff;
-    padding: 29px;
-    border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-
-}
+    width: 90%;    margin-bottom: 60px; /* added spacing between sections */}
 
 .hidden {
     display: none;
