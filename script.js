@@ -70,4 +70,47 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
+
+    // Manual slider controls
+    document.querySelectorAll('[data-slider]').forEach(slider => {
+        const viewport = slider.querySelector('.slider-viewport');
+        const prevButton = slider.querySelector('.slider-button-prev');
+        const nextButton = slider.querySelector('.slider-button-next');
+
+        if (!viewport || !prevButton || !nextButton) {
+            return;
+        }
+
+        const scrollAmount = () => Math.max(240, viewport.clientWidth * 0.82);
+
+        prevButton.addEventListener('click', () => {
+            if (viewport.scrollLeft <= 5) {
+                viewport.scrollTo({ left: viewport.scrollWidth, behavior: 'smooth' });
+            } else {
+                viewport.scrollBy({ left: -scrollAmount(), behavior: 'smooth' });
+            }
+        });
+
+        nextButton.addEventListener('click', () => {
+            const nearEnd = viewport.scrollLeft + viewport.clientWidth >= viewport.scrollWidth - 5;
+            if (nearEnd) {
+                viewport.scrollTo({ left: 0, behavior: 'smooth' });
+            } else {
+                viewport.scrollBy({ left: scrollAmount(), behavior: 'smooth' });
+            }
+        });
+    });
+
+    // Highlight contact section near the bottom of the landing page
+    const contactSection = document.querySelector('.contact-section');
+    const updateContactHighlight = () => {
+        if (!contactSection) return;
+        const doc = document.documentElement;
+        const scrolledNearBottom = window.scrollY + window.innerHeight >= doc.scrollHeight - 200;
+        contactSection.classList.toggle('is-active', scrolledNearBottom);
+    };
+
+    updateContactHighlight();
+    window.addEventListener('scroll', updateContactHighlight, { passive: true });
+    window.addEventListener('resize', updateContactHighlight);
 });
