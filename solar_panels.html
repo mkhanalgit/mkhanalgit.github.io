@@ -49,10 +49,27 @@
                 <h2>Solar Panels &amp; Renewable Energy at the South Pole</h2>
                 
                 <h3>The Challenge</h3>
-                <p>Solar energy project began with a simple but stubborn problem: at the South Pole, power is never just about electricity. Every gallon of fuel is expensive, difficult to transport, and hard to manage safely in one of the most remote places on Earth. That challenge becomes even more serious for <strong>IceCube-Gen2</strong>, the planned next-generation expansion of the IceCube Observatory. The project involves 120 additional strings, a large surface array, and a 500 km² radio array, along with the transport of roughly 10,000 optical sensors and the drilling of hundreds of holes to depths of about 2,600 meters. Each hole takes roughly 40 to 50 hours to drill and is expected to require about 6,000 gallons of fuel, while deep drilling over the full construction period could consume about 918,000 gallons in total. My project asks whether some of that burden can be reduced by using renewable energy in a place where logistics are often as challenging as the science itself.</p>
-
+                <p>Solar energy project began with a simple but stubborn problem: at the South Pole, power is never 
+                    just about electricity. Every gallon of fuel is expensive, difficult to transport, and hard to 
+                    manage safely in one of the most remote places on Earth. That challenge becomes even more serious 
+                    for <strong>IceCube-Gen2</strong>, the planned next-generation expansion of the IceCube Observatory. 
+                    The project involves 120 additional strings, a large surface array, and a 500 km² radio array, along 
+                    with the transport of roughly 10,000 optical sensors and the drilling of hundreds of holes to depths 
+                    of about 2,600 meters. Each hole takes roughly 40 to 50 hours to drill and is expected to require 
+                    about 6,000 gallons of fuel, while deep drilling over the full construction period could consume 
+                    about 918,000 gallons in total. My project asks whether some of that burden can be reduced by using 
+                    renewable energy in a place where logistics are often as challenging as the science itself.</p>
+<!-- 
                 <h3>Early Testing: Bonneville Salt Flats</h3>
-                <p>We started testing bifacial solar panels in July 2022. After first checking the operational status of 10 panels outside the University of Utah's Department of Physics building, we carried out our first field campaign at the Bonneville Salt Flats in Utah on July 22, 2022. Bonneville gave us a useful stand-in for South Pole conditions because its bright white surface creates a highly reflective environment, much like Antarctic snow. That test ran from 19:55 to 20:43 at an elevation of 1,291 meters, with the Sun only 2.38° to 10.66° above the horizon. Those are exactly the kinds of low-solar-angle conditions that matter for polar energy systems, so the field test gave us a practical way to study how bifacial panels respond when direct sunlight, diffuse light, and reflected light all contribute to the final power output.</p>
+                <p>We started testing bifacial solar panels in July 2022. After first checking the operational status 
+                    of 10 panels outside the University of Utah's Department of Physics building, we carried out our 
+                    first field campaign at the Bonneville Salt Flats in Utah on July 22, 2022. Bonneville gave us a 
+                    useful stand-in for South Pole conditions because its bright white surface creates a highly reflective
+                    environment, much like Antarctic snow. That test ran from 19:55 to 20:43 at an elevation of 1,291 meters, 
+                    with the Sun only 2.38° to 10.66° above the horizon. Those are exactly the kinds of low-solar-angle 
+                    conditions that matter for polar energy systems, so the field test gave us a practical way to study
+                    how bifacial panels respond when direct sunlight, diffuse light, and reflected light all contribute 
+                    to the final power output.</p> -->
 
                 <div class="research-images-grid">
                     <img src="solar_panels_docs/20240620-south-pole-solar.jpg" alt="South Pole solar testing setup">
@@ -60,28 +77,72 @@
                 </div>
 
                 <h3>Modeling and Simulation</h3>
-                <p>What followed was not just a test, but the beginning of a full modeling effort. We measured panel performance for different orientations, tracked how output changed with the angle between the panel and the Sun, and developed <strong>Python tools</strong> to interpolate the data and predict power for any given incident angle. We then combined those results with more than a decade of <strong>NOAA South Pole irradiance data</strong> to build a simulation framework based on direct, diffuse, and upwelling radiation. This is important because the South Pole is a surprisingly interesting place for solar power: during the austral summer, the Sun stays above the horizon roughly from mid-September to mid-March, reaches about 23.4° in December, and there are about 120 days with the Sun more than 10° above the horizon. Fresh snow can also have an albedo as high as 0.98, meaning a large fraction of light is reflected back toward the panel. Even though the Sun remains low and atmospheric extinction becomes important near the horizon, the combination of continuous daylight, low temperatures, and strong reflection makes bifacial solar especially promising.</p>
+                <p>What followed was not just a test, but the beginning of a full modeling effort. We measured 
+                    panel performance for different orientations, tracked how output changed with the angle between 
+                    the panel and the Sun, and developed <strong>Python tools</strong> to interpolate the data and 
+                    predict power for any given incident angle. We then combined those results with more than a decade 
+                    of <strong>NOAA South Pole irradiance data</strong> to build a simulation framework based on direct, 
+                    diffuse, and upwelling radiation. This is important because the South Pole is a surprisingly 
+                    interesting place for solar power: during the austral summer, the Sun stays above the horizon 
+                    roughly from mid-September to mid-March, reaches about 23.4° in December, and there are about 
+                    120 days with the Sun more than 10° above the horizon. Fresh snow can also have an albedo as high as 
+                    0.98, meaning a large fraction of light is reflected back toward the panel. Even though the Sun 
+                    remains low and atmospheric extinction becomes important near the horizon, the combination of 
+                    continuous daylight, low temperatures, and strong reflection makes bifacial solar especially 
+                    promising.</p>
 
                 <div class="research-images-grid">
                     <img src="solar_panels_docs/irradiance_plot.png" alt="Irradiance analysis plot">
                     <img src="solar_panels_docs/gal_DOM_16-2533-DV-DOM-Minnesota-on-way-down-IMG_2533-363596758.jpg" alt="IceCube DOM deployment">
                 </div>
 
-                <h3>Key Results</h3>
-                <p>Our early results show both the promise of the idea and the engineering reality behind it. In the low-sun Bonneville test, the front side of the panel produced <strong>215.44 W</strong> and the back side produced <strong>124.24 W</strong> before inverse-extinction correction, compared with reference nominal values of 380 W for the front and 266 W for the back. In our South Pole analysis, vertically oriented bifacial panels emerged as one of the most promising concepts because they can collect both incoming sunlight and light reflected upward from the snow, even when the Sun sits low on the horizon. At the same time, we also explored simpler mounting options, including placing panels on top of or beneath surface detector units, because very large vertical installations would require extra support structures and would need to survive strong winds, snow loading, and the long polar winter. Even with those practical constraints, the model suggests that a single panel in the simpler configurations can still remain above 100 W on average from mid-November to mid-February.</p>
+                <!-- <h3>Key Results</h3>
+                <p>Our early results show both the promise of the idea and the engineering reality behind it. 
+                    In the low-sun Bonneville test, the front side of the panel produced <strong>215.44 W</strong> 
+                    and the back side produced <strong>124.24 W</strong> before inverse-extinction correction, 
+                    compared with reference nominal values of 380 W for the front and 266 W for the back. In our 
+                    South Pole analysis, vertically oriented bifacial panels emerged as one of the most promising 
+                    concepts because they can collect both incoming sunlight and light reflected upward from the snow, 
+                    even when the Sun sits low on the horizon. At the same time, we also explored simpler mounting 
+                    options, including placing panels on top of or beneath surface detector units, because very large 
+                    vertical installations would require extra support structures and would need to survive strong winds, 
+                    snow loading, and the long polar winter. Even with those practical constraints, the model suggests 
+                    that a single panel in the simpler configurations can still remain above 100 W on average from mid-November 
+                    to mid-February.</p> -->
 
-                <h3>Scaling Up: The Bigger Picture</h3>
-                <p>When we scale the idea up, the numbers become even more compelling. Our estimates suggest that generating 100 kW would require roughly 400 to 1,100 panels depending on the configuration, and that a <strong>vertically mounted array of 1,000 bifacial panels could produce up to 492,000 kWh</strong> of clean energy in a single austral summer season. That level of solar generation could reduce diesel use for drilling by around <strong>38%</strong>, lower cargo requirements by a factor of 4 to 10, and lead to a modeled fuel-to-panel cost ratio of about 1.5 to 4 over eight years. Earlier South Pole solar studies also support the idea that this is realistic: one study found that photovoltaic panels exposed at the Pole for 410 days showed no noticeable degradation. Broader renewable energy analyses for South Pole systems are also encouraging, with one hybrid solar-wind-battery study suggesting diesel reductions of up to 95% and potential savings of about <strong>$57 million over 15 years</strong>. Together, these results suggest that renewable energy at the South Pole is not just environmentally attractive, but also logistically and economically meaningful.</p>
+                <!-- <h3>Scaling Up: The Bigger Picture</h3>
+                <p>When we scale the idea up, the numbers become even more compelling. Our estimates suggest that generating 
+                    100 kW would require roughly 400 to 1,100 panels depending on the configuration, and that a 
+                    <strong>vertically mounted array of 1,000 bifacial panels could produce up to 492,000 kWh</strong> 
+                    of clean energy in a single austral summer season. That level of solar generation could reduce diesel 
+                    use for drilling by around <strong>38%</strong>, lower cargo requirements by a factor of 4 to 10, and 
+                    lead to a modeled fuel-to-panel cost ratio of about 1.5 to 4 over eight years. Earlier South Pole solar 
+                    studies also support the idea that this is realistic: one study found that photovoltaic panels exposed 
+                    at the Pole for 410 days showed no noticeable degradation. Broader renewable energy analyses for South 
+                    Pole systems are also encouraging, with one hybrid solar-wind-battery study suggesting diesel reductions 
+                    of up to 95% and potential savings of about <strong>$57 million over 15 years</strong>. Together, these 
+                    results suggest that renewable energy at the South Pole is not just environmentally attractive, but also 
+                    logistically and economically meaningful.</p> -->
 
                 <h3>Toward Field Validation</h3>
-                <p>The project is now moving from analog testing and simulation toward direct field validation. We have already shipped four bifacial solar panels and additional electronics to support South Pole testing, and the planned test station includes bifacial panels, a 4 Ω / 500 W braking resistor, 48 V / 600 W cartridge heaters, and continuous voltage-current monitoring so that we can measure real power output through the austral summer while also exploring whether solar can make a small contribution to drill-camp heating. The larger goal is not only to prove that a solar panel can operate in Antarctica, but to understand reliability, maintenance needs, and the practical pathway from a small field test to a renewable energy system that can support future IceCube-Gen2 operations. For me, that is what makes this project exciting: it connects sustainability with discovery. If we can reduce the fuel burden at the South Pole, we are not just saving energy—we are making some of the most ambitious science on Earth more practical to build and sustain.</p>
+                <p>The project is now moving from analog testing and simulation toward direct field validation. 
+                    We have already shipped four bifacial solar panels and additional electronics to support South Pole 
+                    testing, and the planned test station includes bifacial panels, a 4 Ω / 500 W braking resistor, 
+                    48 V / 600 W cartridge heaters, and continuous voltage-current monitoring so that we can measure 
+                    real power output through the austral summer while also exploring whether solar can make a small 
+                    contribution to drill-camp heating. The larger goal is not only to prove that a solar panel can operate 
+                    in Antarctica, but to understand reliability, maintenance needs, and the practical pathway from a small 
+                    field test to a renewable energy system that can support future IceCube-Gen2 operations. For me, that is 
+                    what makes this project exciting: it connects sustainability with discovery. If we can reduce the fuel 
+                    burden at the South Pole, we are not just saving energy—we are making some of the most ambitious science 
+                    on Earth more practical to build and sustain.</p>
 
-                <h3>Presentation & Resources</h3>
+                <!-- <h3>Presentation & Resources</h3>
                 <div class="research-document-box">
                     <h4>Project Presentation</h4>
                     <p>For a detailed overview of the research methodology, results, and findings, please see our full presentation:</p>
                     <a href="solar_panels_docs/Sustainable_Polar_Power.pptx" class="document-link" download>📊 Download: Sustainable Polar Power Presentation</a>
-                </div>
+                </div> -->
             </section>
         </div>
     </div>
