@@ -593,6 +593,60 @@ p {
     box-shadow: 0 6px 14px rgba(0, 0, 0, 0.06);
 }
 
+/* Media Coverage Section */
+.media-coverage-list {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin: 16px 0 20px;
+}
+
+.media-item {
+    padding: 14px 16px;
+    border-left: 4px solid #3498db;
+    border-radius: 10px;
+    background: linear-gradient(135deg, #f9fcfe 0%, #eef6fc 100%);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.media-item:hover {
+    transform: translateX(4px);
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08);
+}
+
+.media-item h4 {
+    margin: 0 0 6px;
+    font-size: 0.98em;
+    color: #2c3e50;
+}
+
+.media-item h4 a {
+    color: #3498db;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.25s ease;
+}
+
+.media-item h4 a:hover {
+    color: #2980b9;
+    text-decoration: underline;
+}
+
+.media-item .media-meta {
+    margin: 0 0 8px;
+    font-size: 0.85em;
+    color: #7f8c8d;
+    font-style: italic;
+}
+
+.media-item p {
+    margin: 0;
+    font-size: 0.95em;
+    color: #566573;
+    line-height: 1.5;
+}
+
 .back-to-research {
     display: inline-block;
     margin-bottom: 20px;
@@ -804,6 +858,386 @@ p {
     display: block; /* Centers the image on its own line */
     margin-left: auto;
     margin-right: auto;
+}
+
+
+/* ============================================ */
+/* LAPTOP / SMALL DESKTOP RESPONSIVENESS */
+/* ============================================ */
+
+@media (max-width: 1280px) {
+    .nav-sidebar {
+        width: 220px;
+        padding: 24px 16px;
+    }
+
+    .content-area {
+        margin-left: 250px;
+        padding: 32px 24px;
+    }
+
+    .content-section {
+        width: 100%;
+    }
+
+    .nav-title {
+        font-size: 1.75em;
+    }
+
+    .nav-subtitle {
+        font-size: 1.05em;
+    }
+
+    .portfolio-photo {
+        width: 135px;
+        height: 135px;
+    }
+
+    .research-card-grid,
+    .hobbies-preview-grid,
+    .hobby-cards-grid {
+        gap: 14px;
+    }
+
+    .research-card-grid {
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    }
+
+    .hobbies-preview-grid {
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    }
+
+    .manual-slider--compact .slider-track img {
+        width: 200px;
+        height: 135px;
+    }
+
+    .manual-slider--large .slider-track img {
+        width: 225px;
+        height: 155px;
+    }
+}
+
+
+/* ============================================ */
+/* MOBILE RESPONSIVENESS - TABLET & SMALL DEVICES */
+/* ============================================ */
+
+@media (max-width: 768px) {
+    /* Adjust sidebar for tablets */
+    .nav-sidebar {
+        width: 200px;
+        padding: 20px 15px;
+        position: fixed;
+        height: 100vh;
+        z-index: 100;
+    }
+
+    /* Reduce sidebar width impact on content */
+    .content-area {
+        margin-left: 200px;
+        padding: 30px 20px;
+    }
+
+    .nav-title {
+        font-size: 1.5em;
+    }
+
+    .nav-subtitle {
+        font-size: 0.95em;
+    }
+
+    .portfolio-photo {
+        width: 120px;
+        height: 120px;
+    }
+
+    /* Adjust content section width */
+    .content-section {
+        width: 100%;
+    }
+
+    /* Stack grids on smaller screens */
+    .research-card-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hobbies-preview-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+
+    .hobby-cards-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .education-timeline {
+        display: block;
+    }
+
+    /* Reduce heading sizes */
+    h2 {
+        font-size: 1.6em;
+    }
+
+    h3 {
+        font-size: 1.2em;
+    }
+
+    /* Adjust button sizes */
+    .cv-link,
+    .github-link,
+    .research-cta-link {
+        padding: 10px 16px;
+        font-size: 0.9em;
+    }
+
+    /* Adjust slider for tablets */
+    .manual-slider--compact .slider-track img {
+        width: 180px;
+        height: 120px;
+    }
+
+    .manual-slider--large .slider-track img {
+        width: 200px;
+        height: 140px;
+    }
+
+    /* Research pills wrap better */
+    .research-pill-row {
+        gap: 8px;
+    }
+
+    .research-pill {
+        font-size: 0.85em;
+        padding: 6px 10px;
+    }
+}
+
+/* ============================================ */
+/* MOBILE RESPONSIVENESS - SMARTPHONES */
+/* ============================================ */
+
+@media (max-width: 480px) {
+    /* Convert sidebar to top navigation */
+    .main-container {
+        flex-direction: column;
+    }
+
+    .nav-sidebar {
+        width: 100%;
+        height: auto;
+        position: static;
+        padding: 20px;
+        overflow-y: visible;
+        max-height: none;
+        z-index: 10;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Content area takes full width */
+    .content-area {
+        margin-left: 0;
+        padding: 20px 15px;
+        width: 100%;
+    }
+
+    /* Responsive title */
+    .nav-title {
+        font-size: 1.3em;
+        margin-bottom: 8px;
+    }
+
+    .nav-subtitle {
+        font-size: 0.85em;
+        margin-bottom: 15px;
+    }
+
+    /* Make portfolio photo smaller */
+    .portfolio-photo {
+        width: 100px;
+        height: 100px;
+        margin-bottom: 15px;
+    }
+
+    /* Logo header on mobile */
+    .logo-header {
+        gap: 10px;
+        margin-bottom: 15px;
+    }
+
+    .logo {
+        width: 40px;
+        height: 40px;
+    }
+
+    /* Navigation links smaller on mobile */
+    .nav-link {
+        font-size: 0.9em;
+        padding: 8px 12px;
+        margin-top: 8px;
+    }
+
+    .sub-nav-link {
+        font-size: 0.75em;
+        padding: 6px 8px;
+    }
+
+    /* Adjust content section */
+    .content-section {
+        width: 100%;
+        margin-bottom: 40px;
+    }
+
+    /* Responsive headings */
+    h2 {
+        font-size: 1.4em;
+        margin-bottom: 12px;
+    }
+
+    h3 {
+        font-size: 1.1em;
+    }
+
+    h4 {
+        font-size: 1em;
+    }
+
+    /* Full-width cards */
+    .research-card-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .hobbies-preview-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .hobby-cards-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    /* Responsive sliders */
+    .manual-slider--compact .slider-track img {
+        width: 150px;
+        height: 100px;
+    }
+
+    .manual-slider--large .slider-track img {
+        width: 160px;
+        height: 110px;
+    }
+
+    .manual-slider {
+        gap: 5px;
+    }
+
+    .slider-button {
+        width: 32px;
+        height: 32px;
+        font-size: 1.2rem;
+    }
+
+    /* About links stack on mobile */
+    .about-links {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .cv-link,
+    .github-link {
+        width: 100%;
+        text-align: center;
+        padding: 10px 15px;
+    }
+
+    .research-cta-link {
+        display: inline-block;
+        padding: 10px 15px;
+        font-size: 0.9em;
+    }
+
+    /* Photo gallery responsive */
+    .hobbies-full-gallery {
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+        gap: 8px;
+    }
+
+    /* Contact section on mobile */
+    .contact-section h4 {
+        font-size: 1em;
+        margin-bottom: 8px;
+    }
+
+    .location-text {
+        font-size: 0.9em;
+    }
+
+    .contact-logos {
+        gap: 8px;
+    }
+
+    .contact-logos a img {
+        width: 28px;
+        height: 28px;
+    }
+
+    /* Research pills responsive */
+    .research-pill-row {
+        gap: 6px;
+    }
+
+    .research-pill {
+        font-size: 0.8em;
+        padding: 5px 8px;
+    }
+
+    /* Media coverage items */
+    .media-item {
+        padding: 12px 14px;
+    }
+
+    .media-item h4 {
+        font-size: 0.9em;
+    }
+
+    .media-item p {
+        font-size: 0.85em;
+    }
+
+    /* Reduce section spacing on mobile */
+    .manual-slider--compact {
+        margin: 20px 0;
+    }
+
+    .manual-slider--large {
+        margin: 20px 0;
+    }
+
+    /* Better text readability */
+    p {
+        font-size: 0.95em;
+    }
+
+    /* List items on mobile */
+    .cv-list {
+        padding-left: 15px;
+        font-size: 0.9em;
+    }
+
+    .cv-list li {
+        margin-bottom: 6px;
+    }
+
+    /* Education timeline mobile */
+    .education-timeline {
+        display: block;
+    }
+
+    .education-item {
+        margin-bottom: 15px;
+    }
 }
 
 /* Hobby Cards Grid */
